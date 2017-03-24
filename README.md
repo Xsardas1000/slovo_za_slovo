@@ -1,1 +1,1 @@
-# solvo_za_slovo
+# slovo_za_slovo
