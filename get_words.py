@@ -139,9 +139,9 @@ def get_prefixes(dict, length):
 
 if __name__ == '__main__':
 
-    row_strings = ["гйеьш", "оаато", "ивокп", "жкеог", "ожчдо"]
-    targets = [(4,3), (3,1)]
-    matrix = np.array(make_matrix(row_strings, size=(5,5)))
+    row_strings = ["икывл", "ннчтк", "оеаьа", "зкннв", "есйит"]
+    targets = [(4, 3), (3, 1)]
+    matrix = np.array(make_matrix(row_strings, size=(5, 5)))
     print(matrix)
     dict = get_dictionary('dictionary.txt')
 
@@ -155,18 +155,18 @@ if __name__ == '__main__':
 
 
     prefixes = []
-    for l in range(17):
+    for l in range(19):
         prefixes.append(get_prefixes(dict, l + 1))
 
-    words = get_all_words(matrix, prefixes, n_letters=15)
+    words = get_all_words(matrix, prefixes, n_letters=17)
     all_words = []
-    for l in range(5, 15):
+    for l in range(17):
         tmp = defaultdict(list)
         for word in words[l]:
             tmp[word[0]] = word[1]
         found = find_words(tmp, dict, targets)
         all_words += found
-    print(all_words)
+    print(len(all_words))
     visualization(all_words, matrix)
 
     '''
